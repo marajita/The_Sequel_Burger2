@@ -1,0 +1,58 @@
+<header>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-12">
+                <img id="burger-image" src="https://myrealdomain.com/images/big-mac-clipart-2.png">
+                <h1 class="heading">Eat-Da-Burger!</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="container content">
+
+        <form class="burger-form form-inline">
+            <input required type="text" name="burger" id="burgerName" class="form-control input-lg" placeholder="Burger Name">
+            </input>
+            <button type="submit" class="btn btn-lg btn-danger" id="add-burger">Add</button>
+
+
+        </form>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+
+                <ul id="burgers-to-devour">
+                    <h3>Burgers to Devour:</h3>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <li> {{this.id}}. {{this.burger_name}}
+                        <!--button in index.handlebars that will submit the user input into the database. -->
+                        <button class="btn btn-info devour" data-burgerid="{{id}}"> Devour it!</button> </li>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+
+            </div>
+
+            <div class="col-md-6">
+                <ul id="burgers-devoured">
+                    <h3>Burgers Devoured:</h3>
+                    {{#each burgers}}
+                    {{#if this.devoured}}
+                    <li> {{this.id}}.{{this.burger_name}}</p>
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    </div>
+</body>>
